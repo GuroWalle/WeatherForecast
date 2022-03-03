@@ -17,7 +17,6 @@
 footer {
   display: flex;
   justify-content: space-between;
-  margin-top: 30rem;
   height: 12rem;
   width: 100vw;
   background: rgb(143, 143, 143);

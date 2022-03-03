@@ -10,8 +10,9 @@
 header {
   display: flex;
   justify-content: center;
+  padding: var(--size--small);
   top: 0;
   left: 0;
-  margin: var(--size--small);
+  width: 100%;
 }
 </style>
