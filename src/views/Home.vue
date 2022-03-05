@@ -1,12 +1,12 @@
 <template>
-  <Weather />
+  <WeatherForecast />
 </template>
 
 <script>
-import Weather from "../components/Weather.vue";
+import WeatherForecast from "../components/WeatherForecast.vue";
 export default {
   components: {
-    Weather,
+    WeatherForecast,
   },
 };
 </script>

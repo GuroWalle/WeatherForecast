@@ -1,0 +1,30 @@
+<svg width="640" height="480" viewBox="0 0 640 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="640" height="480" rx="32" fill="#A6D8E3"/>
+<ellipse cx="51" cy="80" rx="40" ry="29" fill="white"/>
+<ellipse cx="107.5" cy="64" rx="43.5" ry="29" fill="white"/>
+<ellipse cx="236.5" cy="72.5" rx="45.5" ry="31.5" fill="white"/>
+<ellipse cx="195.5" cy="82.5" rx="45.5" ry="31.5" fill="white"/>
+<ellipse cx="145.5" cy="89.5" rx="45.5" ry="31.5" fill="white"/>
+<ellipse cx="96.5" cy="93.5" rx="45.5" ry="31.5" fill="white"/>
+<ellipse cx="150" cy="51.5" rx="33" ry="22.5" fill="white"/>
+<ellipse cx="188.5" cy="35.5" rx="27.5" ry="22.5" fill="white"/>
+<ellipse cx="210.5" cy="51.5" rx="27.5" ry="22.5" fill="white"/>
+<ellipse rx="21.9926" ry="20.2251" transform="matrix(-1 0 0 1 421.007 58.7269)" fill="white"/>
+<ellipse rx="23.917" ry="20.2251" transform="matrix(-1 0 0 1 389.943 47.5683)" fill="white"/>
+<ellipse rx="25.0166" ry="21.9686" transform="matrix(-1 0 0 1 319.017 53.4963)" fill="white"/>
+<ellipse rx="25.0166" ry="21.9686" transform="matrix(-1 0 0 1 341.559 60.4705)" fill="white"/>
+<ellipse rx="25.0166" ry="21.9686" transform="matrix(-1 0 0 1 369.05 65.3524)" fill="white"/>
+<ellipse rx="25.0166" ry="21.9686" transform="matrix(-1 0 0 1 395.991 68.1421)" fill="white"/>
+<ellipse rx="18.1439" ry="15.6919" transform="matrix(-1 0 0 1 366.576 38.8506)" fill="white"/>
+<ellipse rx="15.1199" ry="15.6919" transform="matrix(-1 0 0 1 345.408 27.6919)" fill="white"/>
+<ellipse rx="15.1199" ry="15.6919" transform="matrix(-1 0 0 1 333.312 38.8506)" fill="white"/>
+<ellipse rx="40" ry="29" transform="matrix(-1 0 0 1 567 403)" fill="#FBF8F8"/>
+<ellipse rx="43.5" ry="29" transform="matrix(-1 0 0 1 510.5 387)" fill="#FBF8F8"/>
+<ellipse rx="45.5" ry="31.5" transform="matrix(-1 0 0 1 381.5 395.5)" fill="#FBF8F8"/>
+<ellipse rx="45.5" ry="31.5" transform="matrix(-1 0 0 1 422.5 405.5)" fill="#FBF8F8"/>
+<ellipse rx="45.5" ry="31.5" transform="matrix(-1 0 0 1 472.5 412.5)" fill="#FBF8F8"/>
+<ellipse rx="45.5" ry="31.5" transform="matrix(-1 0 0 1 521.5 416.5)" fill="#FBF8F8"/>
+<ellipse rx="33" ry="22.5" transform="matrix(-1 0 0 1 468 374.5)" fill="#FBF8F8"/>
+<ellipse rx="27.5" ry="22.5" transform="matrix(-1 0 0 1 429.5 358.5)" fill="#FBF8F8"/>
+<ellipse rx="27.5" ry="22.5" transform="matrix(-1 0 0 1 407.5 374.5)" fill="#FBF8F8"/>
+</svg>
