@@ -6,6 +6,7 @@
         type="text"
         placeholder="What city..?"
         v-model="citySearch"
+        autocomplete="off"
         class="forecast__search-location-input"
       />
     </form>
@@ -27,37 +28,37 @@
         v-if="clear"
         class="weather__description-image"
         src="/assets/images/clear.svg"
-        alt=""
+        alt="Image of clear skies."
       />
       <img
         v-if="cloudy"
         class="weather__description-image"
         src="/assets/images/cloudy.svg"
-        alt=""
+        alt="Image of dark clouds."
       />
       <img
         v-if="partlyCloudy"
         class="weather__description-image"
         src="/assets/images/partlyCloudy.svg"
-        alt=""
+        alt="Image of party cloudy skies."
       />
       <img
         v-if="rain"
         class="weather__description-image"
         src="/assets/images/rain.svg"
-        alt=""
+        alt="Image of raindrops."
       />
       <img
         v-if="snow"
         class="weather__description-image"
         src="/assets/images/snow.svg"
-        alt=""
+        alt="Image of snowflakes."
       />
       <img
         v-if="sunny"
         class="weather__description-image"
         src="/assets/images/sunny.svg"
-        alt=""
+        alt="Image of a sun."
       />
     </section>
   </div>
@@ -81,7 +82,7 @@ export default {
 
       weather: {
         cityName: "",
-        date: "Date: ...",
+        date: "",
         temperature: "",
         wind: "",
         description: "",
@@ -171,7 +172,6 @@ export default {
           this.snow = false;
           this.sunny = false;
         }
-
         // makes the weather forecast visible after all the data has been checked
         this.visible = true;
         this.cityFound = false;
@@ -204,7 +204,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: var(--size--small);
+  margin: var(--size--medium);
 }
 
 .forecast__search-location-input {
@@ -218,6 +218,7 @@ export default {
 .forecast__error {
   margin: var(--size--small);
   font-size: var(--font--body);
+  color: red;
 }
 
 .forecast__city-date {
@@ -244,7 +245,6 @@ export default {
   border: 2px solid black;
   border-radius: 2rem;
   background: rgba(155, 150, 150, 0.473);
-
   font-size: var(--font--body);
 }
 
