@@ -218,7 +218,7 @@ export default {
 .forecast__error {
   margin: var(--size--small);
   font-size: var(--font--body);
-  color: red;
+  color: pink;
 }
 
 .forecast__city-date {
