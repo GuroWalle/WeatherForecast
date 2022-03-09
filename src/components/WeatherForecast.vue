@@ -11,11 +11,14 @@
       />
     </form>
 
+    <p class="forecast__app-info" v-if="onMainSite">
+      Find out the weather in any city in the world!
+    </p>
     <p class="forecast__error" v-if="cityFound">No city found</p>
 
     <div class="forecast__city-date">
       <h1>{{ weather.cityName }}</h1>
-      <h2>{{ currentDateTime() }}</h2>
+      <h2 v-if="visible">{{ currentDateTime() }}</h2>
     </div>
 
     <section class="forecast__weather" v-if="visible">
@@ -70,6 +73,7 @@ export default {
     return {
       visible: false,
       cityFound: false,
+      onMainSite: true,
 
       clear: false,
       cloudy: false,
@@ -104,6 +108,8 @@ export default {
         this.weather.temperature = data.temperature;
         this.weather.wind = data.wind;
         this.weather.description = data.description;
+
+        // clears the input after searching is done
         this.citySearch = "";
 
         // checks the backgrounds by using the description
@@ -175,10 +181,12 @@ export default {
         // makes the weather forecast visible after all the data has been checked
         this.visible = true;
         this.cityFound = false;
+        this.onMainSite = false;
       } catch (error) {
         console.log(error);
         this.cityFound = true;
         this.visible = false;
+        this.onMainSite = false;
       }
     },
 
@@ -213,6 +221,12 @@ export default {
   border-radius: 2rem;
   padding: 0.8rem 3rem;
   font-size: var(--font--caption);
+}
+
+.forecast__app-info {
+  margin: var(--size--big);
+  font-size: var(--font--body);
+  color: rgba(0, 0, 0, 0.822);
 }
 
 .forecast__error {
