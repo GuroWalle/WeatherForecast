@@ -12,7 +12,7 @@
     </form>
 
     <p class="forecast__app-info" v-if="onMainSite">
-      Find out the weather in any city in the world!
+      Find the weather in any city in the world!
     </p>
     <p class="forecast__error" v-if="cityFound">No city found</p>
 
@@ -232,7 +232,7 @@ export default {
 .forecast__error {
   margin: var(--size--small);
   font-size: var(--font--body);
-  color: red;
+  color: rgb(255, 0, 0);
 }
 
 .forecast__city-date {
