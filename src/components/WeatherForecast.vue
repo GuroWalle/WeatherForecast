@@ -216,10 +216,10 @@ export default {
 }
 
 .forecast__search-location-input {
-  width: 45rem;
+  width: 40rem;
   border: 2px solid black;
   border-radius: 2rem;
-  padding: 0.8rem 3rem;
+  padding: 1rem;
   font-size: var(--font--caption);
 }
 
