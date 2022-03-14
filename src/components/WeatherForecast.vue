@@ -1,22 +1,23 @@
+<!-- Gotten help from: https://www.youtube.com/watch?v=5Uxe_MNd6go&list=PLgiAmmJALlgzvpogJwhFytLmh6tI-TQSN&index=13&ab_channel=SomTeaCodes -->
 <template>
   <div class="forecast">
-    <form class="forecast__search-location" v-on:submit.prevent="getWeather">
-      <!--.prevent prevnts the site to refresh-->
+    <!-- .prevent prevnts the site to refresh -->
+    <form class="forecast__form" v-on:submit.prevent="getWeather">
       <input
         type="text"
         placeholder="What city..?"
         v-model="citySearch"
         autocomplete="off"
-        class="forecast__search-location-input"
+        class="forecast__form-input"
       />
     </form>
 
     <p class="forecast__app-info" v-if="onMainSite">
       Find the weather in any city in the world!
     </p>
-    <p class="forecast__error" v-if="cityFound">No city found</p>
+    <p class="forecast__error" v-if="noCityFound">No city found</p>
 
-    <div class="forecast__city-date">
+    <div class="forecast__city-and-date">
       <h1>{{ weather.cityName }}</h1>
       <h2 v-if="visible">{{ currentDateTime() }}</h2>
     </div>
@@ -71,18 +72,19 @@
 export default {
   data() {
     return {
+      citySearch: "",
+
       visible: false,
-      cityFound: false,
+      noCityFound: false,
       onMainSite: true,
 
+      // Background images
       clear: false,
       cloudy: false,
       partlyCloudy: false,
       rain: false,
       snow: false,
       sunny: false,
-
-      citySearch: "",
 
       weather: {
         cityName: "",
@@ -96,6 +98,7 @@ export default {
   methods: {
     async getWeather() {
       console.log(this.citySearch);
+      // Fetches data from the api with the same name as searched
       const url = `https://goweather.herokuapp.com/weather/${this.citySearch}`;
       const response = await fetch(url);
 
@@ -103,16 +106,15 @@ export default {
         const data = await response.json();
         console.log(data);
 
-        // data to template
         this.weather.cityName = this.citySearch;
         this.weather.temperature = data.temperature;
         this.weather.wind = data.wind;
         this.weather.description = data.description;
 
-        // clears the input after searching is done
+        // Clears the input after pressing enter / submitting
         this.citySearch = "";
 
-        // checks the backgrounds by using the description
+        // Checks the backgrounds by using the description (from api)
         const weatherDescription = data.description;
         if (weatherDescription.includes("Clear")) {
           this.clear = true;
@@ -178,18 +180,22 @@ export default {
           this.snow = false;
           this.sunny = false;
         }
-        // makes the weather forecast visible after all the data has been checked
+
+        // Makes the weather forecast visible after all the data has been checked
         this.visible = true;
-        this.cityFound = false;
+        this.noCityFound = false;
         this.onMainSite = false;
+
+        // If something does not match, show error
       } catch (error) {
         console.log(error);
-        this.cityFound = true;
         this.visible = false;
+        this.noCityFound = true;
         this.onMainSite = false;
       }
     },
 
+    // Shows year, month and date
     currentDateTime() {
       const current = new Date();
       const date =
@@ -215,7 +221,7 @@ export default {
   margin: var(--size--medium);
 }
 
-.forecast__search-location-input {
+.forecast__form-input {
   width: 40rem;
   border: 2px solid black;
   border-radius: 2rem;
@@ -223,30 +229,34 @@ export default {
   font-size: var(--font--caption);
 }
 
+/* show if onMainSite = true */
 .forecast__app-info {
   margin: var(--size--big);
   font-size: var(--font--body);
   color: rgba(0, 0, 0, 0.822);
 }
 
+/* shows if noCityFound = true */
 .forecast__error {
   margin: var(--size--small);
   font-size: var(--font--body);
   color: rgb(255, 0, 0);
 }
 
-.forecast__city-date {
+.forecast__city-and-date {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+.forecast__city-and-date h1 {
+  font-size: var(--font--heading);
   margin: var(--size--small) 0;
 }
 
-.forecast__city-date h1 {
-  font-size: var(--font--heading);
-}
-
-.forecast__city-date h2 {
+/* shows if visible = true  */
+.forecast__city-and-date h2 {
   font-size: var(--font--body);
 }
 
@@ -262,6 +272,7 @@ export default {
   font-size: var(--font--body);
 }
 
+/* shows if noCityFound = true */
 .forecast__weather h3 {
   background: rgba(255, 255, 255, 0.699);
   font-size: var(--font--body);
