@@ -31,37 +31,37 @@
       <img
         v-if="clear"
         class="weather__description-image"
-        src="/assets/images/clear.svg"
+        src="/images/clear.svg"
         alt="Image of clear skies."
       />
       <img
         v-if="cloudy"
         class="weather__description-image"
-        src="/assets/images/cloudy.svg"
+        src="/images/cloudy.svg"
         alt="Image of dark clouds."
       />
       <img
         v-if="partlyCloudy"
         class="weather__description-image"
-        src="/assets/images/partlyCloudy.svg"
+        src="/images/partlyCloudy.svg"
         alt="Image of party cloudy skies."
       />
       <img
         v-if="rain"
         class="weather__description-image"
-        src="/assets/images/rain.svg"
+        src="/images/rain.svg"
         alt="Image of raindrops."
       />
       <img
         v-if="snow"
         class="weather__description-image"
-        src="/assets/images/snow.svg"
+        src="/images/snow.svg"
         alt="Image of snowflakes."
       />
       <img
         v-if="sunny"
         class="weather__description-image"
-        src="/assets/images/sunny.svg"
+        src="/images/sunny.svg"
         alt="Image of a sun."
       />
     </section>
