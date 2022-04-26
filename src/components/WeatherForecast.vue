@@ -11,6 +11,7 @@
         class="forecast__form-input"
       />
     </form>
+    <button class="forecast__search--button" @click="getWeather">Search</button>
 
     <p class="forecast__app-info" v-if="onMainSite">
       Find the weather in any city in the world!
@@ -226,6 +227,11 @@ export default {
   border: 2px solid black;
   border-radius: 2rem;
   padding: 1rem;
+  font-size: var(--font--caption);
+}
+
+.forecast__search--button {
+  margin: 2rem 0;
   font-size: var(--font--caption);
 }
 
